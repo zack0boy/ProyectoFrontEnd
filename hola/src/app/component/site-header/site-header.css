@@ -2,18 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-
+  padding: 8px 4px;
+  border-bottom: 1px solid #000 ;
 
 }
 .brand{
   margin: 0;
   font-size: 1.24rem;
 }
-.menu{
+.nav{
   margin-left: 12px;
   text-decoration: none;
 }
-.menu a:hover{
+.nav a:hover{
   text-decoration: underline;
 }
