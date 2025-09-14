@@ -1,0 +1,19 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px;
+  border-bottom: 1px solid #000 ;
+
+}
+.brand{
+  margin: 0;
+  font-size: 1.24rem;
+}
+.nav{
+  margin-left: 12px;
+  text-decoration: none;
+}
+.nav a:hover{
+  text-decoration: underline;
+}
