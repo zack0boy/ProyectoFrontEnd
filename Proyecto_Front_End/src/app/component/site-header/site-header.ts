@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-site-header',
   imports: [
-    NgOptimizedImage
+    RouterLink
   ],
   templateUrl: './site-header.html',
   styleUrl: './site-header.css'

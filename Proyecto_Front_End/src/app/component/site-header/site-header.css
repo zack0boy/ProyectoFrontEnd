@@ -1,21 +1,148 @@
-.header{
-  background-color: white;
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.header {
+  background-color: palegreen;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 16px;
+  font-weight: bold;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.16rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 8px 4px;
-  border-bottom: 1px solid #000 ;
+  width: 100%;
+}
 
+.brand a {
+  text-decoration: none;
+  color: black;
 }
-.brand{
-  margin: 0;
-  font-size: 1.24rem;
+
+.brand :hover {
+  color: green;
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
-.nav{
-  margin-left: 12px;
+
+/* pantalla normal */
+.menu {
+  display: flex;
+  gap: 16px;
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu :hover {
+  color: green;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+/*dropdown*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  padding: 10px;
+  color: black;
   text-decoration: none;
 }
-.nav a:hover{
-  text-decoration: underline;
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: palegreen;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 100;
+  flex-direction: column;
 }
 
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  background: #ffffff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilos responsivos */
+@media (max-width: 991px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: palegreen;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    width: 220px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    padding: 10px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+    margin-right: 3rem;
+  }
+
+  .brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu .collapse {
+    display: block;
+  }
+
+  .menu.collapse {
+    display: none;
+  }
+
+  .menu.collapse.show {
+    display: block;
+  }
+}
