@@ -1,24 +1,32 @@
-<header class="header">
-  <h1 class="brand">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-    <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/cropped-LOGO-IMPA-WEB-peque.png" height="67" width="200" alt="pozo al monte  " />
-  </h1>
+<header class="header header-custom">
+  <div class="brand">
+    <!-- Logo -->
+    <a class="bi bi-buildings" style="margin-left: 1rem;" href="#">Pozo Al Monte</a>
 
-  <nav class="nav">
-    <a href="#">municipalidad</a>
+    <!-- Boton hamburguesa -->
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation" onclick="document.querySelector('.menu').classList.toggle('show')">
+      <i class="bi bi-list"></i>
+    </button>
 
-    <a href="#">home</a>
-  </nav>
-  <nav class="nav">
-    <a href="#">tramites en linea</a>
-  </nav>
-  <nav class="nav">
-    <a href="#">consejo municipal</a>
-  </nav>
-  <nav class="nav">
-    <a href="#">concursos publicos</a>
-  </nav>
-  <nav class="nav">
-    <a href="#">atencion a victimas</a>
-  </nav>
+    <!-- Menu -->
+    <nav class="menu menu-custom d-none d-lg-block">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+          Municipalidad <i class="bi bi-caret-down-fill" style="font-size: 0.8em;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#">Historia</a>
+          <a href="#">Autoridades</a>
+          <a href="#">Departamentos</a>
+        </div>
+      </div>
+      <a routerLink="/tramites">Trámites en Línea</a>
+
+      <a href="#">Consejo Municipal</a>
+      <a href="#">Concursos Públicos</a>
+      <a href="#">Atención a Víctimas</a>
+    </nav>
+  </div>
 </header>
