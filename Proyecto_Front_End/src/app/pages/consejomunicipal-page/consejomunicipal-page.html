@@ -1,5 +1,21 @@
+<h1>Consejo Municipal</h1>
+
+<form (ngSubmit)="enviarFormulario()" #formulario="ngForm">
+  <!-- Campo de texto -->
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+  <label>Selecciona una opción:</label>
+  <select [(ngModel)]="opcionSeleccionada" name="opcionSeleccionada" required>
+    <option *ngFor="let op of opciones" [value]="op">{{ op }}</option>
+  </select>
+
+  <!-- Vista previa de datos -->
+  <p>Nombre: {{ nombre }}</p>
+  <p>Opción seleccionada: {{ opcionSeleccionada }}</p>
+
+  <button type="submit">Enviar</button>
+</form>
 
 <app-site-header></app-site-header>
-
-<p>consejomunicipal-page works!</p>
 <app-site-footer></app-site-footer>
