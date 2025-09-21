@@ -1,19 +1,72 @@
-<main class="content">
-  <!-- Video de fondo -->
-  <video class="video-fondo" autoplay loop >
-    <source src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/VID_20240527_121028.mp4" type="video/mp4">
-  </video>
+<!-- Banner con video y slider -->
+<section class="hero">
+  <div class="video-container">
+    <video autoplay muted loop class="video-fondo">
+      <source src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/VID_20240527_121028.mp4" type="video/mp4">
+    </video>
 
-  <!-- Contenedor de texto encima -->
-  <div class="text-transparent">
-    <div class="banner">
-      <div class="texto">Bienvenidos a nuestra nueva y renovada página web donde podrás encontrar todo lo referente a nuestra comuna y municipalidad, como los trámites en línea de permisos de circulación,
-        patentes comerciales y DOM, además de revisar las noticias más relevantes, las organizaciones comunitarias, seguridad ciudadana y mucho más.</div>
+    <!-- Slider de bienvenida con título y subtítulo -->
+    <div class="hero-text">
+      <button class="flecha izquierda" (click)="anterior()">&#10094;</button>
 
-      <div class="texto">PozoAlmonte está ubicado a más de 50 kilómetros desde la ciudad de Iquique, en plena Pampa del Tamarugal, cuenta con distintos atractivos turísticos en su abanico de destinos.
-        Imprescindibles como las ex oficinas salitreras Humberstone y Santa Laura, ambas declaradas Monumentos Nacionales desde el año 1970 y Patrimonio Cultural de la Humanidad desde el 2005.</div>
+      <div class="texto-slider">
+        <h1>{{ textos[indexActual].titulo }}</h1>
+        <p class="subtexto">{{ textos[indexActual].subtitulo }}</p>
+      </div>
+
+      <button class="flecha derecha" (click)="siguiente()">&#10095;</button>
     </div>
-
-    <p>texto aaaaaaca</p>
   </div>
-</main>
+</section>
+
+<!-- Sección de Noticias -->
+<section class="news">
+  <h2>Noticias Recientes</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/noticia1.jpg" alt="Noticia 1" class="imagen">
+      <h3>Título Noticia 1</h3>
+      <p>Descripción breve de la noticia 1.</p>
+    </div>
+    <div class="card">
+      <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/noticia2.jpg" alt="Noticia 2" class="imagen">
+      <h3>Título Noticia 2</h3>
+      <p>Descripción breve de la noticia 2.</p>
+    </div>
+    <div class="card">
+      <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/noticia3.jpg" alt="Noticia 3" class="imagen">
+      <h3>Título Noticia 3</h3>
+      <p>Descripción breve de la noticia 3.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Trámites -->
+<section class="services">
+  <h2>Trámites en Línea</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Permisos</h3>
+      <p>Realiza tus permisos en línea de manera rápida y segura.</p>
+      <a href="/tramites">
+      <button>al trámite</button>
+      </a>
+    </div>
+    <div class="card">
+      <h3>Patentes</h3>
+      <p>Consulta y renueva tus patentes municipales desde casa.</p>
+      <a href="/tramites">
+      <button>al trámite</button>
+      </a>
+    </div>
+    <div class="card">
+      <h3>Otros</h3>
+      <p>Accede a otros trámites disponibles para la comunidad.</p>
+      <a href="/tramites">
+      <button>
+        Ir al trámite
+      </button>
+      </a>
+    </div>
+  </div>
+</section>
