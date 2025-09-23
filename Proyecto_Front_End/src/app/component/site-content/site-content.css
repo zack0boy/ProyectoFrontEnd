@@ -1,26 +1,27 @@
-/* Contenedor del video limitado */
 .video-container {
   position: relative;
-  width: 100%;
-  max-height: 400px; /* altura del rectángulo superior */
+  width: 100vw;
+  height: 800px;   /* fijo en 800px */
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
   border: none;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
 }
 
-/* Video de fondo */
+
 .video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;   /* asegura que cubra todo */
+  min-height: 100%;
   width: 100%;
   height: 100%;
+  transform: translate(-50%, -50%);
   object-fit: cover;
-  display: block;
-  border: none;
-  outline: none;
-  box-shadow: none;
 }
 
 /* Recuadro transparente con slider */
@@ -30,6 +31,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0,0,0,0.5);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 80px 80px;
   border-radius: 10px;
   color: white;
@@ -82,14 +84,42 @@
 
 
 /* Secciones de noticias y trámites */
+
+
+.text-center {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
 .news, .services {
   padding: 40px 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
 .cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  
+}
+
+/* Contenedores flex para cards y slider */
+.cards, .slider-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra horizontalmente */
+  gap: 20px;
+  padding: 40px 20px;
+  align-items: stretch; /* fuerza que todas las cards tengan la misma altura */
+}
+
+/* Contenedor de slider */
+.slider-wrapper {
+  /* si necesitas un fondo o borde similar a .cards, puedes añadirlo */
+  box-sizing: border-box;
 }
 
 .cards .card {
@@ -101,6 +131,7 @@
   box-shadow: none;
   text-align: center;
   transition: transform 0.3s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .cards .card:hover {
@@ -116,7 +147,7 @@
 
 .cards .card button {
   background-color: palegreen;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   outline: none;
   padding: 10px 15px;
@@ -130,6 +161,96 @@
   background-color: #f0a500;
 }
 
+.latest-news {
+  padding: 20px 20px;
+}
+
+/* Tarjetas de noticias */
+.latest-news .card {
+  flex: 0 0 calc(33.333% - 13.33px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.latest-news .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.latest-news .card .btn {
+  background-color: palegreen;
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.latest-news .card .btn:hover {
+  background-color: #f0a500;
+}
+
+/* Slider horizontal */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  overflow-x: hidden;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.slider-arrow {
+  background-color: rgba(0,0,0,0.5);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.slider-arrow:hover {
+  background-color: rgba(240,165,0,0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow.izquierda { left: 10px; }
+.slider-arrow.derecha { right: 10px; }
+
+/* Responsividad slider */
+@media (max-width: 992px) {
+  .slider-container .card { flex: 0 0 calc(50% - 10px); }
+}
+
+@media (max-width: 576px) {
+  .slider-container .card { flex: 0 0 100%; }
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
   .hero-text {
@@ -140,4 +261,27 @@
   .cards {
     flex-direction: column;
   }
+}
+
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: palegreen;
 }

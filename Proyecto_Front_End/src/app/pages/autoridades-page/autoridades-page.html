@@ -1,0 +1,26 @@
+<app-site-header></app-site-header>
+
+<section class="autoridades">
+  <h2 class="text-center mb-4">Alcalde</h2>
+
+  <!-- Alcalde -->
+  <div class="cards mb-4 justify-content-center">
+    <div class="card" *ngFor="let a of alcalde">
+      <img [src]="a.imgAlcalde" [alt]="a.nombreAlcalde">
+      <h5 class="nombre">{{ a.nombreAlcalde }}</h5>
+      <p class="cargo">Alcalde</p>
+    </div>
+  </div>
+
+  <h2 class="text-center2 mb-4">Concejales</h2>
+  <!-- Concejales -->
+  <div class="cards justify-content-center">
+    <div class="card" *ngFor="let c of concejales">
+      <img [src]="c.img" [alt]="c.nombre">
+      <h5 class="nombre">{{ c.nombre }}</h5>
+      <p class="cargo">Concejal</p>
+    </div>
+  </div>
+</section>
+
+<app-site-footer></app-site-footer>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SiteFooter } from "../../component/site-footer/site-footer";
-import { SiteHeader } from '../../component/site-header/site-header';
+import { HeaderComponent } from '../../component/site-header/site-header';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -11,11 +11,11 @@ import {NgForOf} from '@angular/common';
   standalone: true,
   imports: [
     SiteFooter,
-    SiteHeader,
     FormsModule,
     NgForOf,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    HeaderComponent
+],
   templateUrl: './consejomunicipal-page.html',
   styleUrls: ['./consejomunicipal-page.css']
 })

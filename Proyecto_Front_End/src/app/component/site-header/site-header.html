@@ -11,22 +11,20 @@
     </button>
 
     <!-- Menu -->
-    <nav class="menu menu-custom d-none d-lg-block">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">
-          Municipalidad <i class="bi bi-caret-down-fill" style="font-size: 0.8em;"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#">Historia</a>
-          <a href="#">Autoridades</a>
-          <a href="#">Departamentos</a>
-        </div>
+  <nav class="menu menu-custom d-none d-lg-block">
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle">
+        Municipalidad <i class="bi bi-caret-down-fill" style="font-size: 0.8em;"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="https://tarapacaenelmundo.com/pozo-almonte-pueblo-de-leyenda/">Historia</a>
+        <a routerLink="/autoridades">Autoridades</a>
       </div>
-      <a routerLink="/tramites">Trámites en Línea</a>
+    </div>
 
-      <a href="/consejo">Consejo Municipal</a>
-      <a href="#">Concursos Públicos</a>
-      <a href="#">Atención a Víctimas</a>
-    </nav>
+    <a routerLink="/tramites">Trámites en Línea</a>
+    <a (click)="scrollTo('noticias')">Últimas Noticias</a>
+    <a (click)="scrollTo('contacto')">Contacto</a>
+  </nav>
   </div>
 </header>

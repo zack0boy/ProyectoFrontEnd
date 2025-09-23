@@ -1,0 +1,68 @@
+
+.autoridades {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-bottom: 2rem;
+}
+
+.autoridades h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: stretch; 
+}
+
+/* Card individual */
+.card {
+  flex: 1 1 200px; /* tamaño base mínimo */
+  max-width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.cargo {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,105 @@
+/* === Estilos generales para la sección de trámites === */
+.tramites-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #212529;
+}
+
+/* Títulos */
+.tramites-container h2 {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #065EA0; /* azul municipal */
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.3rem;
+}
+
+/* Imagen central */
+.tramites-container img {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 10px;
+  border: 2px solid #e5e5e5;
+  margin-top: inherit;
+}
+
+/* Formularios */
+.tramites-container form {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+/* Labels */
+.tramites-container label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+/* Inputs y selects */
+.tramites-container input,
+.tramites-container select,
+.tramites-container textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tramites-container input:focus,
+.tramites-container select:focus,
+.tramites-container textarea:focus {
+  border-color: #065EA0;
+  box-shadow: 0 0 0 0.2rem rgba(6, 94, 160, 0.25);
+  outline: none;
+}
+
+/* Botones */
+.tramites-container button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: #065EA0; /* azul municipal */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.1s;
+}
+
+.tramites-container button:hover {
+  background-color: #054a7d;
+  transform: translateY(-1px);
+}
+
+.tramites-container button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tramites-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .tramites-container h2 {
+    font-size: 1.3rem;
+  }
+}

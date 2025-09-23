@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
 <!-- Banner con video y slider -->
 <section class="hero">
   <div class="video-container">
@@ -20,24 +25,34 @@
 </section>
 
 <!-- Sección de Noticias -->
-<section class="news">
-  <h2>Noticias Recientes</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/noticia1.jpg" alt="Noticia 1" class="imagen">
-      <h3>Título Noticia 1</h3>
-      <p>Descripción breve de la noticia 1.</p>
+<section id="noticias" class="latest-news container my-5">
+  <h2 class="text-center mb-4">Últimas Noticias</h2>
+
+  <!-- Mensajes de carga o error -->
+  <div *ngIf="cargando" class="text-center">
+    <p>Cargando noticias...</p>
+  </div>
+
+  <div *ngIf="errorMsg" class="text-center text-danger">
+    <p>{{ errorMsg }}</p>
+  </div>
+
+  <!-- Slider horizontal -->
+  <div class="slider-wrapper" *ngIf="!cargando && posts.length > 0">
+    <button class="slider-arrow izquierda" (click)="slideAnterior()">&#10094;</button>
+
+    <div class="slider-container">
+      <div *ngFor="let post of posts.slice(0, 10)" class="card">
+        <img [src]="getImagenPost(post)" class="card-img-top" alt="Imagen de la noticia">
+        <div class="card-body">
+          <h5 class="card-title fw-bold" [innerHTML]="post.title.rendered"></h5>
+          <p class="card-text" [innerHTML]="post.excerpt.rendered"></p>
+          <a [href]="post.link" target="_blank" class="btn btn-outline-primary btn-sm" style="text-decoration: none;">Leer más</a>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/noticia2.jpg" alt="Noticia 2" class="imagen">
-      <h3>Título Noticia 2</h3>
-      <p>Descripción breve de la noticia 2.</p>
-    </div>
-    <div class="card">
-      <img src="https://impa.gob.cl/wpes/wp-content/uploads/2024/05/noticia3.jpg" alt="Noticia 3" class="imagen">
-      <h3>Título Noticia 3</h3>
-      <p>Descripción breve de la noticia 3.</p>
-    </div>
+
+    <button class="slider-arrow derecha" (click)="slideSiguiente()">&#10095;</button>
   </div>
 </section>
 
@@ -68,5 +83,24 @@
       </button>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- Sección de Contacto -->
+
+<section id="contacto" class="contact">
+  <h2>Contacto</h2>
+  <p>¿Tienes alguna pregunta o necesitas asistencia? Contáctanos.</p>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/municipalidaddepozoalmonte" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/municipiopozoalmonte" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://twitter.com/pozoalmontemuni" target="_blank" aria-label="X (Twitter)">
+      <i class="fab fa-x-twitter"></i>
+    </a>
   </div>
 </section>

@@ -1,5 +1,26 @@
 <app-site-header></app-site-header>
-<img src="https://impa.gob.cl/wpes/wp-content/uploads/2025/08/18ecafd4-2d11-44ad-a32b-1d2f25484be0.jpg" alt="licencia" width="300" height="300">
 
-<p>tramites-page works!</p>
+<main class="tramites-container">
+  <img src="https://impa.gob.cl/wpes/wp-content/uploads/2025/08/18ecafd4-2d11-44ad-a32b-1d2f25484be0.jpg" 
+       alt="licencia" width="300" height="300">
+
+  <h2>Buscar Trámite</h2>
+  <form class="tramites-search" (ngSubmit)="buscarTramite()" #formBuscar="ngForm">
+    <label for="busquedaTramite">Nombre del trámite:</label>
+    <input type="text"
+           id="busquedaTramite"
+           name="busquedaTramite"
+           [(ngModel)]="busquedaTramite"
+           required
+           placeholder="Ingrese el trámite que busca">
+    <button type="submit" [disabled]="formBuscar.invalid">Buscar</button>
+  </form>
+
+  <!-- Sección de pedir hora que se muestra solo cuando la búsqueda es válida -->
+  <div *ngIf="busquedaValida" class="pedir-hora">
+    <h3>Pedir hora para el trámite: "{{ busquedaTramite }}"</h3>
+    <button (click)="pedirHora()">Solicitar Hora</button>
+  </div>
+</main>
+
 <app-site-footer></app-site-footer>
